@@ -144,14 +144,42 @@ void showCharacterStats(PlayerStats& playerStats)
     std::cout << "                             Character damage: " << playerStats.damage << std::endl;
 }
 
+void updateCharacterStats(PlayerStats& playerStats)
+{
+    int tempNumber;
 
+	std::cout << "=============================================================================== " << std::endl;
+    std::cout << "           " << playerStats.playerName << ", choose quality to upgrade (0 - health, 1 - damage): ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+
+    switch(tempNumber)
+    {
+    case (0):
+        std::cout << "=============================================================================== " << std::endl;
+        std::cout << "                             Number to upgrade: ";
+        std::cin >> tempNumber;
+        playerStats.health += tempNumber;
+        break;
+    case (1):
+        std::cout << "=============================================================================== " << std::endl;
+        std::cout << "                             Number to upgrade: ";
+        std::cin >> tempNumber;
+        playerStats.damage += tempNumber;
+        break;
+    default:
+        std::cout << "=============================================================================== " << std::endl;
+        std::cout << "                             Nothing was upgraded ";
+        std::cout << std::endl;
+        break;
+    }
+    showCharacterStats(playerStats);
+}
 int main()
 {
     PlayerStats player1;
     
     
-
-    
     creatingCharacter(player1);
-    showCharacterStats(player1);
+    updateCharacterStats(player1);
 }
