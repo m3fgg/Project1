@@ -11,6 +11,7 @@ enum PlayerWeapon
     Pickaxe
 };
 
+
 enum class PlayerRace
 {
     Magician,
@@ -18,6 +19,7 @@ enum class PlayerRace
     Elf,
     Dwarf
 };
+
 
 struct PlayerStats
 {
@@ -41,6 +43,7 @@ struct PlayerStats
 void creatingCharacter(PlayerStats& playerStats)
 {
     int tempNumber;
+
     std::string tempString;
 
     std::cout << "===============================================================================" << std::endl;
@@ -133,6 +136,7 @@ void creatingCharacter(PlayerStats& playerStats)
     playerStats.playerName = tempString;
 }
 
+
 void showCharacterStats(PlayerStats& playerStats)
 {
     std::cout << "===============================================================================" << std::endl;
@@ -143,6 +147,7 @@ void showCharacterStats(PlayerStats& playerStats)
     std::cout << "                             Character health: " << playerStats.health << std::endl;
     std::cout << "                             Character damage: " << playerStats.damage << std::endl;
 }
+
 
 void updateCharacterStats(PlayerStats& playerStats)
 {
@@ -176,22 +181,32 @@ void updateCharacterStats(PlayerStats& playerStats)
     showCharacterStats(playerStats);
 }
 
+
 void changeCharacterName(PlayerStats& playerStats)
 {
     std::string newName;
     std::cout << "=============================================================================== " << std::endl;
-    std::cout << "            " << playerStats.playerName << ", enter new name: ";
+    std::cout << "                          " << playerStats.playerName << ", enter new name: ";
     std::cin >> newName;
     std::cout << std::endl;
 
     playerStats.playerName = newName;
 }
 
+
 int main()
 {
+
     PlayerStats player1;
+
     
     
     creatingCharacter(player1);
+
     updateCharacterStats(player1);
+
+    changeCharacterName(player1);
+
+    showCharacterStats(player1);
+
 }
