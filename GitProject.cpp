@@ -175,6 +175,18 @@ void updateCharacterStats(PlayerStats& playerStats)
     }
     showCharacterStats(playerStats);
 }
+
+void changeCharacterName(PlayerStats& playerStats)
+{
+    std::string newName;
+    std::cout << "=============================================================================== " << std::endl;
+    std::cout << "            " << playerStats.playerName << ", enter new name: ";
+    std::cin >> newName;
+    std::cout << std::endl;
+
+    playerStats.playerName = newName;
+}
+
 int main()
 {
     PlayerStats player1;
