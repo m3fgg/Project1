@@ -187,6 +187,10 @@ void changeCharacterName(PlayerStats& playerStats)
     playerStats.playerName = newName;
 }
 
+void printHello() {
+    std::cout << "hello, World";
+}
+
 int main()
 {
     PlayerStats player1;
