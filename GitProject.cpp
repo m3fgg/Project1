@@ -1,20 +1,157 @@
-// GitProject.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <string>
+
+
+enum PlayerWeapon
+{
+	Gun,
+    MagWand,
+    Bow,
+    Sword,
+    Pickaxe
+};
+
+enum class PlayerRace
+{
+    Magician,
+    Knight,
+    Elf,
+    Dwarf
+};
+
+struct PlayerStats
+{
+    PlayerRace playerRace;
+    std::string playerRaceString;
+    PlayerWeapon playerWeapon;
+    std::string playerWeaponString;
+
+    std::string playerName;
+
+    int age;
+
+    float damage;
+
+    float health;
+
+
+};
+
+
+void creatingCharacter(PlayerStats& playerStats)
+{
+    int tempNumber;
+    std::string tempString;
+
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                                Creating Character                             " << std::endl;
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "          Choose race (0 - Magician, 1 - Knight, 2 - Elf, 3 - Dwarf): ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+    
+    switch(tempNumber)
+    {
+    case (0):
+    	playerStats.playerRace = PlayerRace::Magician;
+        playerStats.playerRaceString = "Magician";
+        break;
+    case (1):
+    	playerStats.playerRace = PlayerRace::Knight;
+        playerStats.playerRaceString = "Knight";
+        break;
+    case (2):
+    	playerStats.playerRace = PlayerRace::Elf;
+        playerStats.playerRaceString = "Elf";
+        break;
+    case (3):
+    	playerStats.playerRace = PlayerRace::Dwarf;
+        playerStats.playerRaceString = "Dwarf";
+        break;
+    default:
+        std::cout << "this race doesn't exist";
+        break;
+    }
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "   Choose weapon (0 - Gun, 1 - MagWand, 2 - Bow, 3 - Sword, 4 - Pickaxe): ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+
+    switch(tempNumber)
+    {
+    case (0):
+        playerStats.playerWeapon = PlayerWeapon::Bow;
+        playerStats.playerWeaponString = "Bow";
+        break;
+    case (1):
+        playerStats.playerWeapon = PlayerWeapon::Sword;
+        playerStats.playerWeaponString = "Sword";
+        break;
+    case (2):
+        playerStats.playerWeapon = PlayerWeapon::MagWand;
+        playerStats.playerWeaponString = "MagWand";
+        break;
+    case (3):
+        playerStats.playerWeapon = PlayerWeapon::Pickaxe;
+        playerStats.playerWeaponString = "Pickaxe";
+        break;
+    case (4):
+        playerStats.playerWeapon = PlayerWeapon::Gun;
+        playerStats.playerWeaponString = "Gun";
+        break;
+    default:
+        std::cout << "This weapon doesn't exist";
+        break;
+    }
+
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                                Enter age: ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+
+    playerStats.age = tempNumber;
+
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                                Enter damage: ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+
+    playerStats.damage = tempNumber;
+
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                                Enter health: ";
+    std::cin >> tempNumber;
+    std::cout << std::endl;
+
+    playerStats.health = tempNumber;
+
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                                Enter character name: ";
+    std::cin >> tempString;
+    std::cout << std::endl;
+
+    playerStats.playerName = tempString;
+}
+
+void showCharacterStats(PlayerStats& playerStats)
+{
+    std::cout << "===============================================================================" << std::endl;
+    std::cout << "                             Character name: " << playerStats.playerName << std::endl;
+    std::cout << "                             Character race: " << playerStats.playerRaceString << std::endl;
+    std::cout << "                             Character weapon: " << playerStats.playerWeaponString << std::endl;
+    std::cout << "                             Character age: " << playerStats.age << std::endl;
+    std::cout << "                             Character health: " << playerStats.health << std::endl;
+    std::cout << "                             Character damage: " << playerStats.damage << std::endl;
+}
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    PlayerStats player1;
+    
+    
+
+    
+    creatingCharacter(player1);
+    showCharacterStats(player1);
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

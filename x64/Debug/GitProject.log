@@ -1,0 +1,4 @@
+﻿  GitProject.cpp
+F:\C++Project\GitProject\GitProject\GitProject.cpp(119,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+F:\C++Project\GitProject\GitProject\GitProject.cpp(126,26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  GitProject.vcxproj -> F:\C++Project\GitProject\GitProject\x64\Debug\GitProject.exe
