@@ -197,4 +197,5 @@ int main()
     
     creatingCharacter(player1);
     updateCharacterStats(player1);
+    printHello();
 }
