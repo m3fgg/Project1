@@ -195,7 +195,6 @@ int main()
 {
     PlayerStats player1;
     
-    
     creatingCharacter(player1);
     updateCharacterStats(player1);
 }
